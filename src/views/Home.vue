@@ -9,62 +9,74 @@
         </template>
         
     </b-navbar>
-    <div class="container">
-  <div 
-  class="notification is-primary"
-  v-for="(personaje, $index) in personajes"
-  :key="$index"
-  cols="auto"
-  >
-    <div class="card"
-    :title="personaje.nombre"
-    :img-src="personaje.imagen"
-    img-top
-    tag="article"
-    >
+    <div class="columns is-multiline">
+      <div class="column">
+    <div 
+    v-for="(personaje, $index) in personajes"
+    :key="$index"
+    class="card">
   <div class="card-image">
-    <figure class="image is-4by3">
-      <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+    <figure class="image is-48x48">
+      <img :src="personaje.imagen" alt="Placeholder image"/>
     </figure>
   </div>
   <div class="card-content">
     <div class="media">
-      <div class="media-left">
-        <figure class="image is-48x48">
-          <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-        </figure>
-      </div>
+      
       <div class="media-content">
-        <p class="title is-4">John Smith</p>
-        <!--p class="subtitle is-6">@johnsmith</p-->
+        <p class="title is-4">{{ personaje.nombre }}</p>
+        
       </div>
     </div>
+  </div>
+</div>
+</div>
 
-    <!--div class="content">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-      <a href="#">#css</a> <a href="#">#responsive</a>
-      <br>
-      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-    </div-->
-  </div>
-</div>
-  </div>
-</div>
+    </div>
+    
  </div>
     
     
 </template>
 
 <script>
-import List from '@/components/List.vue'
-
 export default {
-  components: List,
+    data: () => ({
+        personajes: [
+        {
+        id: 1,
+        nombre: 'Morty',
+        imagen:
+        'https://rickandmortyapi.com/api/character/avatar/2.jpeg'
+        },
+        {
+        id: 2,
+        nombre: 'Rick',
+        imagen:
+        'https://rickandmortyapi.com/api/character/avatar/1.jpeg'
+        },
+        {
+        id: 3,
+        nombre: 'Summer',
+        imagen:
+        'https://rickandmortyapi.com/api/character/avatar/3.jpeg'
+        },
+        {
+        id: 4,
+        nombre: 'Beth',
+        imagen:
+        'https://rickandmortyapi.com/api/character/avatar/4.jpeg'
+        },
+        {
+        id: 5,
+        nombre: 'Jerry',
+        imagen:
+        'https://rickandmortyapi.com/api/character/avatar/5.jpeg'
+        }
+        ]
+    }),
 
-  data: () => {
-    
-  }
-}
+}    
 </script>
+
 
