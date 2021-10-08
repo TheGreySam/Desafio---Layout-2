@@ -9,14 +9,15 @@
         </template>
         
     </b-navbar>
-    <div class="columns is-multiline">
-      <div class="column">
+    <div class="columns">
+      <div class="column is-flex " style="padding: 1%">
     <div 
     v-for="(personaje, $index) in personajes"
     :key="$index"
-    class="card">
+    class="card"
+    style="width: 33%; padding: 1%">
   <div class="card-image">
-    <figure class="image is-48x48">
+    <figure class="image">
       <img :src="personaje.imagen" alt="Placeholder image"/>
     </figure>
   </div>
