@@ -10,7 +10,7 @@
         
     </b-navbar>
     <div class="columns">
-      <div class="column is-flex " style="padding: 1%">
+      <div class="column is-flex flex-wrap is-justify-content-space-around" style="padding: 1%">
     <div 
     v-for="(personaje, $index) in personajes"
     :key="$index"
